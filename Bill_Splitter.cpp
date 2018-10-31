@@ -6,6 +6,7 @@ struct item_t {
 };
 
 int main() {
+    double my_total{}, his_total{};
     item_t cart[50]{};
     for (int i = 0; i < 50; ++i) {
         double x{};
@@ -16,7 +17,6 @@ int main() {
         }
         cart[i] = item_t{x, y};
     }
-    double my_total{}, his_total{};
     for (int i = 0; i < 50; ++i) {
         if (cart[i].price != 0) {
             if (cart[i].owner == 'm') {
@@ -31,5 +31,5 @@ int main() {
             break;
         }
     }
-
+    std::cout << "I owe $" << my_total;
 }
